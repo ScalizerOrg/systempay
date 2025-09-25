@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# Copyright © Lyra Network.
+# This file is part of Systempay plugin for Odoo. See COPYING.md for license details.
+#
+# Author:    Lyra Network (https://www.lyra.com)
+# Copyright: Copyright © Lyra Network
+# License:   http://www.gnu.org/licenses/agpl.html GNU Affero General Public License (AGPL v3)
+-->
+
+<odoo noupdate="1">
+    <record id="payment_method_systempay" model="payment.method">
+        <field name="name"><![CDATA[Systempay]]></field>
+        <field name="code">systempay</field>
+        <field name="sequence">1000</field>
+        <field name="image" type="base64" file="payment/static/img/card.png" />
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+    </record>
+
+    <record id="payment_method_systempaymulti" model="payment.method">
+        <field name="name"><![CDATA[Systempay Multi]]></field>
+        <field name="code">systempaymulti</field>
+        <field name="sequence">1000</field>
+        <field name="image" type="base64" file="payment/static/img/card.png" />
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+    </record>
+
+    <record id="payment_method_systempaycb" model="payment.method">
+        <field name="name">CB</field>
+        <field name="code">systempaycb</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempay')" />
+        <field name="sequence">1000</field>
+        <field name="active">True</field>
+        <field name="image" type="base64" file="payment_systempay/static/src/img/cb.png" />
+    </record>
+
+    <record id="payment_method_systempayvisa" model="payment.method">
+        <field name="name">Visa</field>
+        <field name="code">systempayvisa</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempay')" />
+        <field name="sequence">1000</field>
+        <field name="active">True</field>
+        <field name="image" type="base64" file="payment/static/img/visa.png" />
+    </record>
+
+    <record id="payment_method_systempaymastercard" model="payment.method">
+        <field name="name">Mastercard</field>
+        <field name="code">systempaymastercard</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempay')" />
+        <field name="sequence">1000</field>
+        <field name="active">True</field>
+        <field name="image" type="base64" file="payment/static/img/mastercard.png" />
+    </record>
+
+    <record id="payment_method_systempayamex" model="payment.method">
+        <field name="name">American Express</field>
+        <field name="code">systempayamex</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempay')" />
+        <field name="sequence">1000</field>
+        <field name="active">True</field>
+        <field name="image" type="base64" file="payment/static/img/amex.png" />
+    </record>
+
+     <record id="payment_method_systempayecardtebleue" model="payment.method">
+        <field name="name">e-Carte Bleue</field>
+        <field name="code">systempayecartebleue</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempay')" />
+        <field name="sequence">1000</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment_systempay/static/src/img/e-cartebleue.png" />
+    </record>
+
+    <record id="payment_method_systempayvisaelectron" model="payment.method">
+        <field name="name">Visa Electron</field>
+        <field name="code">systempayvisaelectron</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempay')" />
+        <field name="sequence">1000</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment_systempay/static/src/img/visa_electron.png" />
+    </record>
+
+    <record id="payment_method_systempayvpay" model="payment.method">
+        <field name="name">V PAY</field>
+        <field name="code">systempayvpay</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempay')" />
+        <field name="sequence">1000</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment/static/img/vpay.png" />
+    </record>
+
+    <record id="payment_method_systempayapplepay" model="payment.method">
+        <field name="name">Apple Pay</field>
+        <field name="code">systempayapplepay</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempay')" />
+        <field name="sequence">1000</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment/static/img/apple_pay.png" />
+    </record>
+
+     <record id="payment_method_systempaypaypal" model="payment.method">
+        <field name="name">PayPal</field>
+        <field name="code">systempaypaypal</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempay')" />
+        <field name="sequence">1000</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="payment/static/img/paypal.png" />
+    </record>
+
+    <record id="payment_method_systempaymulticb" model="payment.method">
+        <field name="name">CB</field>
+        <field name="code">systempaymulticb</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempaymulti')" />
+        <field name="sequence">1000</field>
+        <field name="active">True</field>
+        <field name="image" type="base64" file="payment_systempay/static/src/img/cb.png" />
+    </record>
+
+    <record id="payment_method_systempaymultivisa" model="payment.method">
+        <field name="name">Visa</field>
+        <field name="code">systempaymultivisa</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempaymulti')" />
+        <field name="sequence">1000</field>
+        <field name="active">True</field>
+        <field name="image" type="base64" file="payment/static/img/visa.png" />
+    </record>
+
+    <record id="payment_method_systempaymultimastercard" model="payment.method">
+        <field name="name">Mastercard</field>
+        <field name="code">systempaymultimastercard</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempaymulti')" />
+        <field name="sequence">1000</field>
+        <field name="active">True</field>
+        <field name="image" type="base64" file="payment/static/img/mastercard.png" />
+    </record>
+
+    <record id="payment_method_systempaymultiamex" model="payment.method">
+        <field name="name">American Express</field>
+        <field name="code">systempaymultiamex</field>
+        <field name="primary_payment_method_id" eval="ref('payment_method_systempaymulti')" />
+        <field name="sequence">1000</field>
+        <field name="active">True</field>
+        <field name="image" type="base64" file="payment/static/img/amex.png" />
+    </record>
+</odoo>
