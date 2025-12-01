@@ -13,8 +13,6 @@ import hmac
 import logging
 from os import path
 
-from pkg_resources import parse_version
-
 from odoo import models, api, fields, _
 from odoo.exceptions import ValidationError
 from odoo.tools import convert_xml_import
